@@ -1,0 +1,8 @@
+# Ignore all files in the users.db directory
+database/users.db
+# Ignore all files in the product uploads directory
+database/uploads/product/*
+# Ignore all files in the ProfilePictures uploads directory
+database/uploads/ProfilePictures/*
+# Ignore all files in the temp uploads directory
+database/uploads/temp/*

@@ -1,0 +1,100 @@
+@startuml
+
+hide circles
+
+class User{
+    - userID: int
+    - userEmail: String
+    - userPassword: String
+    - userAddress: String
+    - isAdmin: Boolean
+
+    - userRoles: UserRole[]
+
+    + userName: String
+    + login(): void
+    + logout(): void
+
+}
+
+class UserRole{
+}
+
+class Buyer{
+    - cart : Product[]
+
+    + addToCart(productId: int): void
+    + removeFromCart(productId: int): void
+    + purchaseItems(): void
+}
+
+class Seller{
+    - products : Product[]
+
+    + listProducts(): void
+    + addProduct(product: Product) : void
+    + removeProduct(productId: int): void
+    + updateProduct(productId: int, productDetails: Product): void
+}
+
+class Review{
+    - userId: int
+    - productId: int
+
+    ' Number of stars given from a range, e.g "0/10"
+    - stars: int
+    + reviewTitle: String
+    + description: String
+}
+
+class Type{
+    - categoryId: int
+
+    'For example, you can choose from categories types like "XS", "S", "M" etc..'
+    + type: String
+    
+    + getCategoryId(): int
+    + getTypeId(): int
+    + getTypesFromCategory(): String[]
+    + getType() : String
+
+}
+
+class Category{
+    + categoryName: String
+    'For example, you can add "XS", "S", "M" etc..'
+    + categoryTypes: String[]
+
+    ' Only admins
+    + addType(type: String) : void 
+}
+
+class Product{
+    - sellerId: int
+    - productId: int
+
+    + productCategory : Category
+
+    + productType: Type
+
+    + productName: String
+    + productPrice: Float
+    + productDescription: String
+    + productReviews: Review[]
+    + addReview(review: Review): void
+}
+
+Seller "1" -- "*" Product
+Product "1" -- "0..*" Review
+Buyer "*" -- "*" Product
+
+User "1" -- "*" UserRole
+UserRole "1" <|-- "1" Seller
+UserRole "1" <|-- "1" Buyer
+
+Product "*" -- "1" Category
+Product "*" -- "1" Type
+
+
+
+@enduml

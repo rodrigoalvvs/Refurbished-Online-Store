@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Inter-SemiBold';
+    src: url('../fonts/Inter-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Inter-Medium';
+    src: url('../fonts/Inter-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'CC';
+    src: url('../fonts/cc.otf') format('opentype');
+}
+
+body{
+    overflow-x: hidden;
+}
+
+:root {
+    --primary-color: rgb(0, 0, 0);
+    --secondary-color: rgb(34, 51, 59);
+    --light-color: rgb(234, 224, 213);
+    --coffee-color: rgb(198, 172, 143);
+    --chocolate-color: rgb(94, 80, 63);
+    --white: white;
+}
+@media screen and (max-width: 50em){
+    main{
+        font-size: 0.8em;
+    }
+}

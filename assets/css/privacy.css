@@ -1,0 +1,105 @@
+main {
+    display: flex;
+    overflow-y: hidden;
+}
+
+main {
+    font-family: 'Inter-Medium', sans-serif;
+    background-color: white;
+}
+
+section {
+    width: 50%;
+    margin: 0 auto;
+    height: fit-content;
+    border-radius: 20px;
+}
+
+section>header {
+    background-color: var(--secondary-color);
+    color: #f3f3f3;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 1em;
+    margin: 0 auto;
+    margin-top: 1em;
+
+    display: flex;
+    align-items: baseline;
+    column-gap: 1em;
+    
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 1.5em;
+    border-radius: 20px;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    
+    max-width: 90%;
+}
+
+section>header>span:last-child {
+    cursor: pointer;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.user-info {
+    padding: 5em;
+}
+
+.user-info>form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1em;
+}
+
+
+.user-info>form>span {
+    width: 8em;
+    text-align: center;
+}
+
+.changes-status {
+    grid-area: output;
+}
+
+.profile-picture-div>input:nth-child(6) {
+    grid-area: sumbit;
+}
+
+.user-info>form>input {
+    cursor: default;
+    width: 20em;
+    font-size: 1em;
+    padding: 10px 10px 10px 10px;
+    border: 0;
+    border-radius: 10px;
+    border: 1px var(--secondary-color) solid;
+    outline: none;
+}
+
+
+.user-info>form>input[type="button"] {
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    width: 10em;
+    padding: 1em 1em;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 60em) {
+    .icon {
+        display: inline;
+    }
+
+    aside>ul>li>a:last-child {
+        display: none;
+    }
+
+    section {
+        width: 100vw;
+    }
+}

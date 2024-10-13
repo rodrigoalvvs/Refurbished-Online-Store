@@ -1,0 +1,84 @@
+.account-navigator{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+    z-index: 1;
+    bottom: 0;
+    border-radius: 20px; 
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.account-navigator > ul{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.account-navigator > ul > li{
+    display: flex;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    border: 0;
+    border-top: 4px transparent solid;
+    transition: border 0.2s ease;
+}
+
+.account-navigator > ul > li > a{
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: all 0.2s ease-in-out;
+    padding: 1em 2em;
+}
+
+.account-navigator > ul > li:first-child{
+    border-radius: 20px 0px 0px 20px;
+}
+.account-navigator > ul > li:last-child{
+    border-radius: 0px 20px 20px 0px;
+}
+
+.account-navigator > ul > li:hover{
+    cursor: pointer;
+    border-top: 4px var(--secondary-color) solid;
+    box-shadow: rgba(50, 50, 93, 0.05) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px inset;
+    transition: all 0.2s ease-in-out;
+}
+.account-navigator > button{
+    color: var(--primary-color);
+    align-self: flex-end;
+    margin-top: auto;
+    background: none;
+    border: 0;
+    font-size: 1.2em;
+    float: right;
+    margin-right: 10%;
+    cursor: pointer;
+}
+
+.icon{
+    display: none;
+    color: black;
+}
+
+
+@media screen and (max-width: 60em) {
+    .icon{
+        display: inline;
+    }
+    aside > ul > li > a:last-child{
+        display: none;
+    }
+}
